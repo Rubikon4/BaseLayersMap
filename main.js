@@ -71,7 +71,7 @@ const map = new ol.Map({
 });
 
 // Функция для переключения базовых карт
-var ratioFunction = function (event) {
+var radioSwitcher = function (event) {
     var checkbox = event.target;
     var layerName = this.id;
     if (checkbox.checked) {
@@ -87,7 +87,7 @@ var ratioFunction = function (event) {
 
 // Навешиваем обработчики на радиокнопки
 document.querySelectorAll('input[name="mapRadioSwitcher"]').forEach(function (radio) {
-    radio.addEventListener('change', ratioFunction);
+    radio.addEventListener('change', radioSwitcher);
 });
 
 // Доп. функция для переключения прочих слоёв (например, векторных)
