@@ -22,14 +22,14 @@ const map = new ol.Map({
         new ol.layer.Tile({
             visible: true,
             basemap: true,
-            name: "backgroundRadioOSM",
+            name: "radioOSM",
             source: new ol.source.OSM(),
         }),
 
         new ol.layer.Tile({
             visible: false,
             basemap: true,
-            name: "backgroundRadioBing",
+            name: "radioBing",
             source: new ol.source.XYZ({
                 attributions: [
                     'Tiles <a href="https://services.arcgisonline.com/arcgis/rest/services/World_Physical_Map/MapServer">ArcGIS</a>'
@@ -41,7 +41,7 @@ const map = new ol.Map({
         new ol.layer.Tile({
             visible: false,
             basemap: true,
-            name: "backgroundRadioStreet",
+            name: "radioStreet",
             source: new ol.source.XYZ({
                 attributions: [
                     'Tiles <a href="https://services.arcgisonline.com/arcgis/rest/services/World_Street_Map/MapServer">ArcGIS</a>'
@@ -53,7 +53,7 @@ const map = new ol.Map({
         new ol.layer.Tile({
             visible: false,
             basemap: true,
-            name: "backgroundRadioSrelief",
+            name: "radioRelief",
             source: new ol.source.XYZ({
                 attributions: [
                     'Tiles <a href="https://services.arcgisonline.com/arcgis/rest/services/World_Topo_Map/MapServer">ArcGIS</a>'
@@ -86,7 +86,7 @@ var ratioFunction = function (event) {
 };
 
 // Навешиваем обработчики на радиокнопки
-document.querySelectorAll('input[name="backgroundRadio"]').forEach(function (radio) {
+document.querySelectorAll('input[name="mapRadioSwitcher"]').forEach(function (radio) {
     radio.addEventListener('change', ratioFunction);
 });
 
