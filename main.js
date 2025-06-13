@@ -1,3 +1,21 @@
+// Инициализация вектора Москвы
+const moscowVectorLayer = new ol.layer.Vector({
+    source: new ol.source.Vector({
+        url: 'moscow.geojson',
+        format: new ol.format.GeoJSON()
+    }),
+    style: new ol.style.Style({
+        stroke: new ol.style.Stroke({
+            color: 'purple',
+            width: 2
+        }),
+        fill: new ol.style.Fill({
+            color: 'rgba(128, 0, 128, 0.1)'
+        })
+    })
+});
+
+// Инициализация карты OpenLayers
 const map = new ol.Map({
     target: document.getElementById("map"),
     layers: [
@@ -42,10 +60,11 @@ const map = new ol.Map({
                 ],
                 url: "https://server.arcgisonline.com/ArcGIS/rest/services/" + "World_Topo_Map/MapServer/tile/{z}/{y}/{x}"
             }),
-        })
+        }),
+        moscowVectorLayer // Добавляем векторный слой Москвы
     ],
     view: new ol.View({
-        center: ol.proj.fromLonLat([37.6173, 55.7558]),  // Москва
+        center: ol.proj.fromLonLat([37.6173, 55.7558]),  // Зум на Москву по умолчанию
         zoom: 4
     })
     
@@ -71,7 +90,7 @@ document.querySelectorAll('input[name="backgroundRadio"]').forEach(function (rad
     radio.addEventListener('change', ratioFunction);
 });
 
-// Дополнительная функция для переключения прочих слоёв (например, векторных)
+// Доп. функция для переключения прочих слоёв (например, векторных)
 var checkFunction = function (event) {
     var checkbox = event.target;
     var layerName = this.name;
