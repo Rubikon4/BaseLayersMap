@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Базовая карта</title>
+    <script src="https://cdn.jsdelivr.net/npm/ol@10.4.0/dist/ol.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@10.4.0/ol.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="radio-basemap">
+        <input type="radio" name="backgroundRadio" id="backgroundRadioBing" value="bing"> Спутник<br>
+        <input type="radio" name="backgroundRadio" id="backgroundRadioOSM" value="osm" checked> OSM<br>
+        <input type="radio" name="backgroundRadio" id="backgroundRadioSrelief" value="stm"> Рельеф<br>
+        <input type="radio" name="backgroundRadio" id="backgroundRadioStreet" value="stm"> Улицы<br>
+    </div>
+
+    <div id="map" class="map"></div>
+
+    <script type="module" src="main.js"></script>
+
+</body>
+</html>
